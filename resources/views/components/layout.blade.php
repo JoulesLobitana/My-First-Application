@@ -10,19 +10,19 @@
 
     <!-- Navbar -->
     <nav class="bg-white shadow-md">
+        <!-- Desktop Navigation -->
         <div class="hidden md:block">
-    <div class="ml-10 flex items-baseline space-x-4">
-        <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
-        <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
-        <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
-    </div>
-</div>
-<div class="md:hidden space-y-1 px-2 pb-3 pt-2">
-    <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
-    <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
-    <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
-</div>
+            <div class="ml-10 flex items-baseline space-x-4">
+                <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
+                <x-nav-link href="/jobs" :active="request()->is('jobs')">Jobs</x-nav-link>
+            </div>
+        </div>
 
+        <!-- Mobile Navigation -->
+        <div class="md:hidden space-y-1 px-2 pb-3 pt-2">
+            <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
+            <x-nav-link href="/jobs" :active="request()->is('jobs')">Jobs</x-nav-link>
+        </div>
     </nav>
 
     <!-- Header -->

@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Employer;
+use App\Models\JobListing;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,11 +13,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Create an employer
+        $employer = Employer::create([
+            'name' => 'Tech Corp'
+        ]);
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        // Create job listings for that employer
+        JobListing::create([
+            'title' => 'Software Engineer',
+            'salary' => '$80,000',
+            'employer_id' => $employer->id
+        ]);
+
+        JobListing::create([
+            'title' => 'Project Manager',
+            'salary' => '$95,000',
+            'employer_id' => $employer->id
         ]);
     }
 }

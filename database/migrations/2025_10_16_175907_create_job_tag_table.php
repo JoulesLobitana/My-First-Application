@@ -11,19 +11,23 @@ return new class extends Migration
      */
     public function up(): void
 {
-    Schema::create('tags', function (Blueprint $table) {
+    Schema::create('job_listing_tag', function (Blueprint $table) {
         $table->id();
-        $table->string('name')->unique();
+        $table->foreignIdFor(\App\Models\Job::class, 'job_listing_id')
+              ->constrained('job_listings')
+              ->cascadeOnDelete();
+        $table->foreignIdFor(\App\Models\Tag::class)
+              ->constrained()
+              ->cascadeOnDelete();
         $table->timestamps();
     });
 }
-
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('tags');
+        Schema::dropIfExists('job_tag');
     }
 };

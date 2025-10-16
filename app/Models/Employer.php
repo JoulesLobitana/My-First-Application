@@ -9,11 +9,9 @@ class Employer extends Model
 {
     use HasFactory;
 
-    // Allow "name" to be mass-assigned
-    protected $fillable = ['name'];
-
-    public function jobListings()
+    // An Employer has many Jobs
+    public function jobs()
     {
-        return $this->hasMany(JobListing::class);
+        return $this->hasMany(\App\Models\Job::class);
     }
 }

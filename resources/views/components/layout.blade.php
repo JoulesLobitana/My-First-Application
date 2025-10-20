@@ -22,6 +22,8 @@
         <div class="md:hidden space-y-1 px-2 pb-3 pt-2">
             <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
             <x-nav-link href="/jobs" :active="request()->is('jobs')">Jobs</x-nav-link>
+            <x-nav-link href="/jobs/create" :active="request()->is('jobs/create')">Create Job</x-nav-link>
+
         </div>
     </nav>
 
